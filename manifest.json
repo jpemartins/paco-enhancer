@@ -1,14 +1,14 @@
 {
-  "name": "UA Student Statistics",
+  "name": "UA Student",
   "version": "0.1",
-  "description": "Some statistics on the student of the university of aveiro",
+  "description": "Some statistics on the student of the university of aveiro, integrated with PACO Portal",
   "browser_action": {
-    "default_icon": "ua.png",
-    "popup": "popup.html"
+    "default_icon": "ua.png"
+    /*"popup": "popup.html"*/
   },
   "content_scripts": [
     {
-      "matches": ["https://paco.ua.pt/secvirtual/*"],
+      "matches": ["https://paco.ua.pt/secvirtual/c_planocurr.asp"],
       "css": ["css/inject.css"],
       "js": ["js/jquery.js", "js/inject.js"]
     }
