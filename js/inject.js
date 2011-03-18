@@ -23,8 +23,8 @@ function getDisciplinas() {
     var disciplines_html = $('.table_cell_par, .table_cell_impar');
     disciplines_html.each(function(index,value) {
         var _ds = $('td', value);
-        var value = _ds.eq(0).find('img');
-        if (value.length) {
+        var option = _ds.eq(0).find('img');
+        if (option.length) {
             var table = _ds.parents('tr + tr').find('table');
             var _ds = table.find('tbody > tr:not(.table_topcol) > td');
         }
