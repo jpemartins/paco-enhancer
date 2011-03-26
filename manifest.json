@@ -12,9 +12,6 @@
     "128" : "paco128.png"
   },
   "background_page": "background.html",
-  "permissions": [
-    "background"
-  ],
   "content_scripts": [
     {
       "matches": ["https://paco.ua.pt/secvirtual/c_planocurr.asp"],
