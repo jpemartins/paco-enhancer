@@ -1,23 +1,47 @@
 <html>
-  <head>
-  <script>
-    chrome.extension.onConnect.addListener(function(port) {
-      console.assert(port.name == "knockknock");
-      port.onMessage.addListener(function(msg) {
-        if (msg.joke == "Knock knock")
-          port.postMessage({question: "Who's there?"});
-        else if (msg.answer == "Madame")
-          port.postMessage({question: "Madame who?"});
-        else if (msg.answer == "Madame... Bovary")
-          port.postMessage({question: "I don't get it."});
-      });
+    <head>
+    <script src="js/jquery.js"></script>
+    <script>
+    function renderMean(value){        
+        $("#mean > span").html(value.toFixed(2)+"("+value.toFixed()+")"); 
+    }
+    function renderHistory(history){
+        
+    }
+    </script>
+    <script>
+    $(document).ready(function(evt){
+        var mean = window.localStorage.getItem("mean");
+        var history = window.localStorage.getItem("history");
+        renderMean(parseFloat(mean));
+        renderHistory(history);
     });
-  </script>
-  </head>
-  <body>
-  <!-- 
-  histórico => https://paco.ua.pt/secvirtual/c_historiconotas.asp
-  plano curricular => https://paco.ua.pt/secvirtual/c_planocurr.asp
-  -->
-  </body>
+    </script>
+    </head>
+    <style>
+    body {
+        width: 200px;
+        height: 200px;
+    }
+    
+    #mean {
+        font-size: 12px;
+    }
+
+    #mean span {
+        font-size: 11px;
+    }
+    </style>
+    <body>
+    <div id="mean">
+        <b>Media Ponderada:</b> <span></span>
+    </div>
+    <div id="history">
+        <!--<p><b>Media Ponderada:</b> <span ></span></p>-->
+    </div>
+      <!-- 
+      histórico => https://paco.ua.pt/secvirtual/c_historiconotas.asp
+      plano curricular => https://paco.ua.pt/secvirtual/c_planocurr.asp
+      -->
+    </body>
 </html>

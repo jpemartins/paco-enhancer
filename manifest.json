@@ -3,14 +3,18 @@
   "version": "0.1",
   "description": "Some statistics on the student of the university of aveiro, integrated with PACO Portal",
   "browser_action": {
-    "default_icon": "ua.png"
-    /*"popup": "popup.html"*/
+    "default_icon": "ua.png",
+    "popup": "popup.html"
   },
+  "background_page": "background.html",
+  "permissions": [
+    "background"
+  ],
   "content_scripts": [
     {
       "matches": ["https://paco.ua.pt/secvirtual/c_planocurr.asp"],
       "css": ["css/inject.css"],
-      "js": ["js/jquery.js", "js/inject.js"]
+      "js": ["js/jquery.js",  "js/inject.js"]
     }
   ]
 }

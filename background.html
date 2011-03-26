@@ -1,0 +1,26 @@
+<html>
+    <head>
+    <script>
+    function saveMean(value){
+        window.localStorage.setItem("mean", value);
+    }
+    function saveHistory(history){}
+    function saveGrades(grades){}
+
+    chrome.extension.onRequest.addListener(function(data, sender, sendResponse) {            
+        if (data.mean){
+            saveMean(data.mean); 
+        }
+        if (data.history){ 
+            saveHistory(data.history); 
+        }
+        if (data.grades){ 
+            saveGrades(data.grades); 
+        }
+        sendResponse();
+    });
+    </script>
+    </head>
+    <body>
+    </body>
+</html>
