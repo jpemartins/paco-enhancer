@@ -1,10 +1,15 @@
 {
-  "name": "UA Student",
+  "name": "PACO Enhancer",
   "version": "0.1",
   "description": "Some statistics on the student of the university of aveiro, integrated with PACO Portal",
-  "browser_action": {
-    "default_icon": "ua.png",
+  /*"browser_action": {
+    "default_icon": "paco.png",
     "popup": "popup.html"
+  },*/
+  "icons" : {
+    "16" : "paco16.png",
+    "48" : "paco48.png",
+    "128" : "paco128.png"
   },
   "background_page": "background.html",
   "permissions": [

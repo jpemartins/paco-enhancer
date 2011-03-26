@@ -124,7 +124,7 @@ function sendGrades(values){ sendToBase({ grades : values } ) }
 
 /** Render */
 function renderMean(value){
-    $('#template_main > table:eq(1) > tbody').append('<tr class=\"table_cell_impar\"><td align=\"left\">Media Ponderada</td><td align=\"right\">'+ value.toFixed(2) + '</td></tr>');
+    $('#template_main > table:eq(1) > tbody').append('<tr class=\"table_cell_par\"><td align=\"left\">Media Ponderada</td><td align=\"right\">'+ value.toFixed(2) + '</td></tr>');
 }
 
 function renderYearMean(year, value){
