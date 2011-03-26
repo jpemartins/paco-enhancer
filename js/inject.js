@@ -117,7 +117,9 @@ function calcHistoryMeanAll(current_mean, grades){
 }
 
 /** Send to Extension */
-function sendToBase(data) { chrome.extension.sendRequest(data); }
+function sendToBase(data) { 
+    chrome.extension.sendRequest(data); 
+}
 function sendMean(value){ sendToBase({ mean : value }); }
 function sendHistoryMean(values){ sendToBase({ history : values } ) }
 function sendGrades(values){ sendToBase({ grades : values } ) }
